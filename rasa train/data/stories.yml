@@ -1,0 +1,65 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: recomendacion_juego
+  steps:
+  - intent: saludo_juegos
+  - action: utter_saludo_juegos
+  - intent: recomendar_juego
+  - action: utter_recomendacion_juego
+  - action: utter_ask_juego_favorito
+  - intent: affirm
+  - action: utter_confirm_recomendacion
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: opinion_juego
+  steps:
+  - intent: saludo_juegos
+  - action: utter_saludo_juegos
+  - intent: opinion_juego
+  - action: utter_opinion_juego
+  - action: utter_goodbye
+
+- story: problemas_juego
+  steps:
+  - intent: saludo_juegos
+  - action: utter_saludo_juegos
+  - intent: problemas_juego
+  - action: utter_problemas_juego
+  - action: utter_goodbye
+
+- story: despedida
+  steps:
+  - intent: saludo_juegos
+  - action: utter_saludo_juegos
+  - intent: despedida_juegos
+  - action: utter_goodbye

@@ -1,0 +1,71 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - saludo_juegos
+  - recomendar_juego
+  - opinion_juego
+  - problemas_juego
+  - despedida_juegos
+
+actions:
+  - utter_saludo_juegos
+  - utter_recomendacion_juego
+  - utter_opinion_juego
+  - utter_problemas_juego
+  - utter_goodbye
+
+slots:
+  juego_favorito:
+    type: text
+    mappings:
+      - type: from_text
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_saludo_juegos:
+  - text: "¡Hola! Soy el bot de juegos. ¿En qué puedo ayudarte?"
+
+  utter_recomendacion_juego:
+  - text: "Claro, ¿qué tipo de juego te gusta? Podría recomendarte algo genial."
+
+  utter_opinion_juego:
+  - text: "Mi opinión sobre juegos puede variar, pero estoy aquí para ayudarte con eso."
+
+  utter_problemas_juego:
+  - text: "¿Qué tipo de problemas estás teniendo? Estoy aquí para ayudar."
+
+  utter_ask_juego_favorito:
+  - text: "¿Cuál es tu juego favorito?"
+
+  utter_confirm_recomendacion:
+  - text: "¡Genial! Te recomiendo probar {juego_favorito}. ¿Te gustaría saber más sobre este juego?"
+
+  utter_goodbye:
+  - text: "¡Adiós! ¡Diviértete jugando! Vuelve pronto si necesitas más ayuda."
+  - text: "Bye"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
